@@ -6,6 +6,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody rb;
+    AudioSource rocketAudio;
+
     float thrustSpeed = 1000f;             // Rate of thrust
     float rotateRate = 100f;               // Rate of rotation
 
@@ -14,6 +16,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rocketAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,8 +32,17 @@ public class Movement : MonoBehaviour
         // Press space bar to thrust.
         if (Input.GetKey(KeyCode.Space))
         {
+            
             rb.AddRelativeForce(Vector3.up * thrustSpeed * Time.deltaTime);
-        }  
+            if (!rocketAudio.isPlaying)
+            {
+                rocketAudio.Play();
+            }
+        }
+        else  
+        {
+            rocketAudio.Stop();
+        }
     }
 
     void ProcessRotation()
