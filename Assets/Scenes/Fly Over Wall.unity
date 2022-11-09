@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &44814518 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5094332472974872632, guid: f9a2bd85b9a162b4f837a1c9ffde5cdc, type: 3}
-  m_PrefabInstance: {fileID: 5094332473725364609}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &44814532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44814518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c4a1c978612f77409184c789bee7a3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,10 +426,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaunchPad
       objectReference: {fileID: 0}
-    - target: {fileID: 4189480032198461847, guid: ae8478a4327df404fa8f042e14a7aa09, type: 3}
-      propertyPath: m_TagString
-      value: Friendly
-      objectReference: {fileID: 0}
     - target: {fileID: 4189480032198461851, guid: ae8478a4327df404fa8f042e14a7aa09, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -506,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4661857494850788038, guid: 2c38929ceb0ca014ea8c20444f9c0978, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 47.12
+      value: -32.92
       objectReference: {fileID: 0}
     - target: {fileID: 4661857494850788038, guid: 2c38929ceb0ca014ea8c20444f9c0978, type: 3}
       propertyPath: m_LocalPosition.y
@@ -548,10 +527,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LandPad
       objectReference: {fileID: 0}
-    - target: {fileID: 4661857494850788042, guid: 2c38929ceb0ca014ea8c20444f9c0978, type: 3}
-      propertyPath: m_TagString
-      value: Finish
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c38929ceb0ca014ea8c20444f9c0978, type: 3}
 --- !u!1001 &5094332473725364609
@@ -561,14 +536,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 44814525, guid: f9a2bd85b9a162b4f837a1c9ffde5cdc, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8017df239d864ec4e9dc641e5e607d67, type: 3}
-    - target: {fileID: 44814525, guid: f9a2bd85b9a162b4f837a1c9ffde5cdc, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5094332472974872632, guid: f9a2bd85b9a162b4f837a1c9ffde5cdc, type: 3}
       propertyPath: m_Name
       value: Rocket (player)
