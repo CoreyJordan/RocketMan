@@ -6,6 +6,15 @@ public class CollisionHandler : MonoBehaviour
 {
 
     [SerializeField] float delay = 1f;
+    [SerializeField] AudioClip crashExplosion;
+    [SerializeField] AudioClip successTune;
+
+    AudioSource collisionAudio;
+
+    void Start()
+    {
+        collisionAudio = GetComponent<AudioSource>();
+    }
 
     void OnCollisionEnter(Collision other)
     {
@@ -16,7 +25,7 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("Bumped friendly.");
                 break;
             case "Finish":
-                StartNextLevelSequence();
+                StartNextLevelSequence();                
                 break;
             default:
                 StartCrashSequence();
@@ -27,7 +36,7 @@ public class CollisionHandler : MonoBehaviour
     void StartNextLevelSequence()
     {
         // Disabled flight controls, wait, and load next level.
-        // todo add sound effect on crash
+        collisionAudio.PlayOneShot(successTune);
         // todo add particle effect on crash
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel", delay);
@@ -36,7 +45,7 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence()
     {
         // Disable flight controls, pause, and reload level.
-        // Add sound effect on finish.
+        collisionAudio.PlayOneShot(crashExplosion);
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", delay);
 
@@ -61,6 +70,5 @@ public class CollisionHandler : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
-        
     }
 }

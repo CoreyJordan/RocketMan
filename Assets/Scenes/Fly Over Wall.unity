@@ -536,6 +536,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 44814519, guid: f9a2bd85b9a162b4f837a1c9ffde5cdc, type: 3}
+      propertyPath: engine
+      value: 
+      objectReference: {fileID: 8300000, guid: 8017df239d864ec4e9dc641e5e607d67, type: 3}
+    - target: {fileID: 44814525, guid: f9a2bd85b9a162b4f837a1c9ffde5cdc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 44814532, guid: f9a2bd85b9a162b4f837a1c9ffde5cdc, type: 3}
+      propertyPath: successTune
+      value: 
+      objectReference: {fileID: 8300000, guid: e594477824f56e543b0e48c13f89fefe, type: 3}
+    - target: {fileID: 44814532, guid: f9a2bd85b9a162b4f837a1c9ffde5cdc, type: 3}
+      propertyPath: crashExplosion
+      value: 
+      objectReference: {fileID: 8300000, guid: bfa47a9ead9c0ff45815be771306c141, type: 3}
     - target: {fileID: 5094332472974872632, guid: f9a2bd85b9a162b4f837a1c9ffde5cdc, type: 3}
       propertyPath: m_Name
       value: Rocket (player)
