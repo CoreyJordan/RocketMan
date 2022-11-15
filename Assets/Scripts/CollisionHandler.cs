@@ -11,6 +11,8 @@ public class CollisionHandler : MonoBehaviour
 
     AudioSource collisionAudio;
 
+    bool isTransitioning = false;
+
     void Start()
     {
         collisionAudio = GetComponent<AudioSource>();
@@ -18,24 +20,28 @@ public class CollisionHandler : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        // Reload on crash, load next level on finish.
+        if (isTransitioning) {return;}
+        
+            // Reload on crash, load next level on finish.
         switch (other.gameObject.tag)
         {
-            case "Friendly":
-                Debug.Log("Bumped friendly.");
-                break;
-            case "Finish":
-                StartNextLevelSequence();                
-                break;
-            default:
-                StartCrashSequence();
-                break;
-        }
+        case "Friendly":
+            Debug.Log("Bumped friendly.");
+            break;
+        case "Finish":
+            StartNextLevelSequence();                
+            break;
+        default:
+            StartCrashSequence();
+            break;
+        }   
     }
 
     void StartNextLevelSequence()
     {
+        isTransitioning = true;
         // Disabled flight controls, wait, and load next level.
+        collisionAudio.Stop();
         collisionAudio.PlayOneShot(successTune);
         // todo add particle effect on crash
         GetComponent<Movement>().enabled = false;
@@ -44,7 +50,9 @@ public class CollisionHandler : MonoBehaviour
 
     void StartCrashSequence()
     {
+        isTransitioning = true;
         // Disable flight controls, pause, and reload level.
+        collisionAudio.Stop();
         collisionAudio.PlayOneShot(crashExplosion);
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", delay);
